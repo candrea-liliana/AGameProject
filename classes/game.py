@@ -1,4 +1,5 @@
 import random
+from .magic import Spell
 
 
 # Helper class to print colored output for CMD Line
@@ -28,12 +29,6 @@ class Person:
     def generate_damage(self):
         return random.randrange(self.atkLow, self.atkHigh)
 
-    def generate_spell_damage(self, i):
-        magic_low = self.magic[i]["dmg"] - 5
-        magic_high = self.magic[i]["dmg"] + 5
-
-        return random.randrange(magic_low, magic_high)
-
     def take_damage(self, dmg):
         self.hp -= dmg
 
@@ -46,7 +41,7 @@ class Person:
         if self.hp > self.maxHP:
             self.hp = self.maxHP
 
-# Additional utility classes
+# Additional utility functions
     def get_hp(self):
         return self.hp
 
@@ -62,15 +57,10 @@ class Person:
     def reduce_mp(self, cost):
         self.mp -= cost
 
-    def get_spell_name(self, i):
-        return self.magic[i]["name"]
-
-    def get_spell_magic_cost(self, i):
-        return self.magic[i]["cost"]
-
 # Action classes to choose for person
     def choose_action(self):
         i = 1
+
         print(Bcolors.OKBLUE + Bcolors.BOLD + "Actions" + Bcolors.ENDC)
         for item in self.actions:
             print(str(i) + ":", item)
@@ -78,7 +68,8 @@ class Person:
 
     def choose_magic(self):
         i = 1
+
         print(Bcolors.OKBLUE + Bcolors.BOLD + "Magic" + Bcolors.ENDC)
         for spell in self.magic:
-            print(str(i) + ":", spell["name"], "(cost:", str(spell["cost"]) + ")")
+            print(str(i) + ":", spell.name, "(cost:", str(spell.cost) + ")")
             i += 1
