@@ -1,7 +1,7 @@
 from classes.game import Person, Bcolors
 from classes.magic import Spell
 
-#Create Black magic
+# Create Black magic
 fire = Spell("Fire", 10, 100, "blackMagic")
 thunder = Spell("Thunder", 10, 100, "blackMagic")
 blizzard = Spell("Blizzard", 10, 100, "blackMagic")
@@ -45,14 +45,20 @@ while running:
         # And based on the current MP,
         # find out if the player can continue to cast spells
         current_mp = player.get_mp()
+
         if spell.cost > current_mp:
             print(Bcolors.FAIL + "\nNot enough MP!\n" + Bcolors.ENDC)
             continue #  If not able, can continue to use "ATTACK" instead and the battle goes on
 
         # Reduce the magic points (MP) by the spell that was cast
         player.reduce_mp(spell.cost)
-        enemy.take_damage(magic_dmg)
-        print(Bcolors.OKBLUE + "\n" + spell.name + " deals", str(magic_dmg), "points of damage!" + Bcolors.ENDC)
+
+        if spell.type == "whiteMagic":
+            player.heal(magic_choice)
+            print(Bcolors.OKBLUE + "\n" + spell.name + " heals for", str(magic_dmg), " HP" + Bcolors.ENDC)
+        elif spell.type == "blackMagic":
+            enemy.take_damage(magic_dmg)
+            print(Bcolors.OKBLUE + "\n" + spell.name + " deals", str(magic_dmg), "points of damage!" + Bcolors.ENDC)
 
  # Enemy counter-attack
     enemy_choice = 1 # For attacking the player
