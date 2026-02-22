@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="29fce250-4ef7-4837-afda-3f6db5237530" name="Changes" comment="Create a magic class for spells. Create magic instances and update the magic handling steps.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="29fce250-4ef7-4837-afda-3f6db5237530" name="Changes" comment="Build a role-playing game battle script." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,25 +15,8 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="PREVIOUS_COMMIT_AUTHORS">
-      <list>
-        <option value="Liliana Candrea &lt;lilianacandrea94@gmail.com&gt;" />
-      </list>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;candrea-liliana&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/candrea-liliana/AGameProject.git&quot;,
-    &quot;accountId&quot;: &quot;223a6bc3-9f63-45e2-bb08-9d81dfad5722&quot;
-  }
-}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -47,12 +28,10 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.game.executor&quot;: &quot;Run&quot;,
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;
   }
 }</component>
   <component name="SharedIndexes">
@@ -78,79 +57,11 @@
       <option name="project" value="LOCAL" />
       <updated>1770221985430</updated>
     </task>
-    <task id="LOCAL-00002" summary="Build a role-playing game battle script.">
-      <option name="closed" value="true" />
-      <created>1770222034738</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1770222034738</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Build a role-playing game battle script.">
-      <option name="closed" value="true" />
-      <created>1770222886852</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1770222886852</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Create a magic class for spells. Create magic instances and update the magic handling steps.">
-      <option name="closed" value="true" />
-      <created>1771597038249</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1771597038249</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="2" />
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="master" />
-                </option>
-              </RecentGroup>
-            </list>
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="*" />
-                </option>
-              </RecentGroup>
-            </list>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="CUSTOM_BOOLEAN_PROPERTIES">
-                <map>
-                  <entry key="Show.Git.Branches" value="true" />
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Build a role-playing game battle script." />
-    <MESSAGE value="Create a magic class for spells. Create magic instances and update the magic handling steps." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create a magic class for spells. Create magic instances and update the magic handling steps." />
+    <option name="LAST_COMMIT_MESSAGE" value="Build a role-playing game battle script." />
   </component>
 </project>
