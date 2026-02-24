@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="29fce250-4ef7-4837-afda-3f6db5237530" name="Changes" comment="commit">
+    <list default="true" id="29fce250-4ef7-4837-afda-3f6db5237530" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/classes/inventory.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/game.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,12 +32,12 @@
     &quot;state&quot;: &quot;MERGED&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/candrea-liliana/AGameProject.git",
-    "accountId": "223a6bc3-9f63-45e2-bb08-9d81dfad5722"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/candrea-liliana/AGameProject.git&quot;,
+    &quot;accountId&quot;: &quot;223a6bc3-9f63-45e2-bb08-9d81dfad5722&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -54,6 +56,12 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\candr\PycharmProjects\AGameProject\classes" />
+      <recent name="C:\Users\candr\PycharmProjects\AGameProject" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -85,7 +93,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771762032331</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Heal the player">
+      <option name="closed" value="true" />
+      <created>1771773845366</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1771773845366</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -102,6 +118,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Build a role-playing game battle script." />
     <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+    <MESSAGE value="Heal the player" />
+    <option name="LAST_COMMIT_MESSAGE" value="Heal the player" />
   </component>
 </project>

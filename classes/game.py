@@ -1,5 +1,4 @@
 import random
-from .magic import Spell
 
 
 # Helper class to print colored output for CMD Line
@@ -14,7 +13,7 @@ class Bcolors:
     UNDERLINE = '\033[4m'
 
 class Person:
-    def __init__(self, hp, mp, atk, df, magic):
+    def __init__(self, hp, mp, atk, df, magic, items):
         self.maxHP = hp
         self.hp = hp
         self.maxMP = mp
@@ -23,7 +22,8 @@ class Person:
         self.atkHigh = atk + 10
         self.df = df
         self.magic = magic
-        self.actions = ["Attack", "Magic"]
+        self.items = items
+        self.actions = ["Attack", "Magic", "Items"]
 
 # Generate random damage
     def generate_damage(self):
@@ -38,6 +38,7 @@ class Person:
 
     def heal(self, dmg):
         self.hp -= dmg
+
         if self.hp > self.maxHP:
             self.hp = self.maxHP
 
@@ -61,15 +62,23 @@ class Person:
     def choose_action(self):
         i = 1
 
-        print(Bcolors.OKBLUE + Bcolors.BOLD + "Actions" + Bcolors.ENDC)
+        print("\n" + Bcolors.OKBLUE + Bcolors.BOLD + "ACTIONS" + Bcolors.ENDC)
         for item in self.actions:
-            print(str(i) + ":", item)
+            print("    " + str(i) + ".", item)
             i += 1
 
     def choose_magic(self):
         i = 1
 
-        print(Bcolors.OKBLUE + Bcolors.BOLD + "Magic" + Bcolors.ENDC)
+        print("\n" + Bcolors.OKBLUE + Bcolors.BOLD + "MAGIC" + Bcolors.ENDC)
         for spell in self.magic:
-            print(str(i) + ":", spell.name, "(cost:", str(spell.cost) + ")")
+            print("    " + str(i) + ".", spell.name, "(cost:", str(spell.cost) + ")")
+            i += 1
+
+    def choose_items(self):
+        i = 1
+
+        print("\n" + Bcolors.OKBLUE + Bcolors.BOLD + "ITEMS" + Bcolors.ENDC)
+        for item in self.items:
+            print("    " + str(i) + ".", item.name, ":", item.description, " (x5)")
             i += 1

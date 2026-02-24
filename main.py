@@ -1,75 +1,85 @@
 from classes.game import Person, Bcolors
 from classes.magic import Spell
+from classes.inventory import Item
 
-# Create Black magic
+
+# Create magic
 fire = Spell("Fire", 10, 100, "blackMagic")
 thunder = Spell("Thunder", 10, 100, "blackMagic")
 blizzard = Spell("Blizzard", 10, 100, "blackMagic")
 meteor = Spell("Meteor", 30, 200, "blackMagic")
 quake = Spell("Quake", 12, 130, "blackMagic")
-
-# Create White magic
 cure = Spell("Cure", 12, 80, "whiteMagic")
 cura = Spell("Cura", 18, 100, "whiteMagic")
 
+# Create items
+potion = Item("Potion", "potion", "Heals 50 HP", 50)
+hiPotion = Item("Hi-Potion", "potion", "Heals 100 HP", 100)
+superPotion = Item("Super Potion", "potion", "Heals 500 HP", 500)
+elixir = Item("Elixir", "elixir", "Fully restores HP/MP of one party member", 9999)
+megaElixir = Item("MegaElixir", "elixir", "Fully restore party's HP/MP", 100)
+grenade = Item("Grenade", "attack", "Deals 500 damage", 500)
+
+player_spells = [fire, thunder, blizzard, cure, cura]
+player_items = [potion, superPotion, elixir, grenade ]
+
 # Instantiate People
-player = Person(460, 65, 60, 34, [fire, thunder, blizzard, cure, cura])
-enemy = Person(1200, 65, 45, 25, [])
+player = Person(460, 65, 60, 34, player_spells, player_items)
+enemy = Person(1200, 65, 45, 25, [], [])
 
 running = True
 i = 0
 
-# Bcolors.ENDC - Specify where the style ends
 print(Bcolors.FAIL + Bcolors.BOLD + "AN ENEMY ATTACK!" + Bcolors.ENDC)
 
 while running:
-# Player landing an attack
-    # The player is choosing his way of fighting
     print("============================")
     player.choose_action()
-    choice = input("Choose an action: ")
-    index = int(choice) - 1 # in order to choose the correct action in list, identify the index of it
+    choice = input("Choose an action: ") # The player is choosing his way of fighting
+    index = int(choice) - 1 # In order to choose the correct action in list, identify the index of it
 
     # Player generating damage based on the chosen option
     if index == 0: # Attack
-        dmg = player.generate_damage() # in range 50-70 (60-10; 60+10)
+        dmg = player.generate_damage() # In range 50-70 (60-10; 60+10)
         enemy.take_damage(dmg)
         print("You attacked for", dmg, "points of damage.")
     elif index == 1: # If Magic, then
         player.choose_magic()
         magic_choice = int(input("Choose a magic: ")) - 1
 
+        if magic_choice == -1:
+            continue
+
         spell = player.magic[magic_choice]
         magic_dmg = spell.generate_damage()
 
-        # And based on the current MP,
-        # find out if the player can continue to cast spells
-        current_mp = player.get_mp()
-
-        if spell.cost > current_mp:
+        current_mp = player.get_mp() # And based on the current MP,
+        if spell.cost > current_mp:  # find out if the player can continue to cast spells
             print(Bcolors.FAIL + "\nNot enough MP!\n" + Bcolors.ENDC)
-            continue #  If not able, can continue to use "ATTACK" instead and the battle goes on
+            continue # If not able, can continue to use "ATTACK" until battle is HP is 0
 
-        # Reduce the magic points (MP) by the spell that was cast
-        player.reduce_mp(spell.cost)
+        player.reduce_mp(spell.cost) # Reduce the magic points (MP) by the spell that was cast
 
         if spell.type == "whiteMagic":
             player.heal(magic_choice)
             print(Bcolors.OKBLUE + "\n" + spell.name + " heals for", str(magic_dmg), " HP" + Bcolors.ENDC)
         elif spell.type == "blackMagic":
             enemy.take_damage(magic_dmg)
-            print(Bcolors.OKBLUE + "\n" + spell.name + " deals", str(magic_dmg), "points of damage!" + Bcolors.ENDC)
+            print(Bcolors.OKBLUE + "\n" + spell.name + " deals", str(magic_dmg), " points of damage!" + Bcolors.ENDC)
+    elif index == 2:
+        player.choose_items()
+        item_choice = int(input("Choose an item: ")) - 1
+
+        if item_choice == -1:
+            continue
 
  # Enemy counter-attack
-    enemy_choice = 1 # For attacking the player
-
+    enemy_choice = 1
     enemy_dmg = enemy.generate_damage()
     player.take_damage(enemy_dmg)
-    print("Enemy attacks for", enemy_dmg, "points of damage." )
-
+    print("Enemy attacks for", enemy_dmg, " points of damage." )
     print("______________________________________")
     print("Enemy HP:", Bcolors.FAIL + str(enemy.get_hp()) + "/" + str(enemy.get_max_hp()) + Bcolors.ENDC + "\n")
-
     print("Your HP:", Bcolors.OKGREEN + str(player.get_hp()) + "/" + str(player.get_max_hp()) + Bcolors.ENDC)
     print("Your MP:", Bcolors.OKBLUE + str(player.get_mp()) + "/" + str(player.get_max_mp()) + Bcolors.ENDC + "\n")
 
