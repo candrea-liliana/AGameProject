@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="29fce250-4ef7-4837-afda-3f6db5237530" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/classes/inventory.py" afterDir="false" />
+    <list default="true" id="29fce250-4ef7-4837-afda-3f6db5237530" name="Changes" comment="Added inventory class. &#10;Added items option for the player.&#10;Console printing made more clear and friendly. &#10;Done some code refactoring.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/game.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +99,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771773845366</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added inventory class. &#10;Added items option for the player.&#10;Console printing made more clear and friendly. &#10;Done some code refactoring.">
+      <option name="closed" value="true" />
+      <created>1771959683566</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1771959683566</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -119,6 +125,7 @@
     <MESSAGE value="Build a role-playing game battle script." />
     <MESSAGE value="commit" />
     <MESSAGE value="Heal the player" />
-    <option name="LAST_COMMIT_MESSAGE" value="Heal the player" />
+    <MESSAGE value="Added inventory class. &#10;Added items option for the player.&#10;Console printing made more clear and friendly. &#10;Done some code refactoring." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added inventory class. &#10;Added items option for the player.&#10;Console printing made more clear and friendly. &#10;Done some code refactoring." />
   </component>
 </project>

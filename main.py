@@ -73,6 +73,18 @@ while running:
         if item_choice == -1:
             continue
 
+        item = player.items[item_choice]
+        if item.type == "potion":
+            player.heal(item.prop)
+            print(Bcolors.OKGREEN + "\n" + item.name + " heals for", str(item.prop), "HP" + Bcolors.ENDC)
+        elif item.type == "elixir":
+            player.hp = player.maxHP
+            player.mp = player.maxMP
+            print(Bcolors.OKGREEN + "\n" + item.name + " fully restores HP/MP" + Bcolors.ENDC)
+        elif item.type == "attack":
+            enemy.take_damage(item.prop)
+            print(Bcolors.FAIL + "\n" + item.name + " deals", str(item.prop), "points of damage" + Bcolors.ENDC)
+
  # Enemy counter-attack
     enemy_choice = 1
     enemy_dmg = enemy.generate_damage()
