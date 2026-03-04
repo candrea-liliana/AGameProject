@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="29fce250-4ef7-4837-afda-3f6db5237530" name="Changes" comment="Implement item quantity inventory">
+    <list default="true" id="29fce250-4ef7-4837-afda-3f6db5237530" name="Changes" comment="Implementing progress bars and get the HP and MP status.&#10;Adding multiple players.&#10;Display the progress bar for each player.&#10;Code refactoring the console prints.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +124,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772626059622</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Implementing progress bars and get the HP and MP status.&#10;Adding multiple players.&#10;Display the progress bar for each player.&#10;Code refactoring the console prints.">
+      <option name="closed" value="true" />
+      <created>1772634203604</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1772634203604</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -146,6 +153,7 @@
     <MESSAGE value="Added inventory class. &#10;Added items option for the player.&#10;Console printing made more clear and friendly. &#10;Done some code refactoring." />
     <MESSAGE value="Add item choice actions" />
     <MESSAGE value="Implement item quantity inventory" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement item quantity inventory" />
+    <MESSAGE value="Implementing progress bars and get the HP and MP status.&#10;Adding multiple players.&#10;Display the progress bar for each player.&#10;Code refactoring the console prints." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementing progress bars and get the HP and MP status.&#10;Adding multiple players.&#10;Display the progress bar for each player.&#10;Code refactoring the console prints." />
   </component>
 </project>
