@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="29fce250-4ef7-4837-afda-3f6db5237530" name="Changes" comment="Implementing progress bars and get the HP and MP status.&#10;Adding multiple players.&#10;Display the progress bar for each player.&#10;Code refactoring the console prints.">
+    <list default="true" id="29fce250-4ef7-4837-afda-3f6db5237530" name="Changes" comment="Dynamic progress values to display for HP/MP progress bars">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772634203604</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Dynamic progress values to display for HP/MP progress bars">
+      <option name="closed" value="true" />
+      <created>1772635643495</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1772635643495</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -154,6 +163,7 @@
     <MESSAGE value="Add item choice actions" />
     <MESSAGE value="Implement item quantity inventory" />
     <MESSAGE value="Implementing progress bars and get the HP and MP status.&#10;Adding multiple players.&#10;Display the progress bar for each player.&#10;Code refactoring the console prints." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementing progress bars and get the HP and MP status.&#10;Adding multiple players.&#10;Display the progress bar for each player.&#10;Code refactoring the console prints." />
+    <MESSAGE value="Dynamic progress values to display for HP/MP progress bars" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dynamic progress values to display for HP/MP progress bars" />
   </component>
 </project>

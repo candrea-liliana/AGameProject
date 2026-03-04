@@ -85,7 +85,7 @@ class Person:
             print("        " + str(i) + ".", item["item"].name + ":", item["item"].description, " (x" + str(item["quantity"]) + ")")
             i += 1
 
-    def get_status(self):
+    def get_player_status(self):
         # Calculate HP/MP progress bars
         hp_bar = ""
         hp_ticks = (self.hp / self.maxHP) * 100 / 4
@@ -134,7 +134,35 @@ class Person:
         else:
             current_mp = mp_string
 
-        print("                        _________________________               __________")
-        print(Bcolors.BOLD + self.name + "        " +
+        print("                     _________________________               __________")
+        print(Bcolors.BOLD + self.name + "     " +
               current_hp + " |" + Bcolors.OKGREEN + hp_bar + Bcolors.ENDC + "|     " +
               current_mp + " |" + Bcolors.OKBLUE + mp_bar + Bcolors.ENDC + "|")
+
+    def get_enemy_status(self):
+        hp_bar = ""
+        bar_ticks = (self.hp / self.maxHP) * 100 / 2
+
+        while bar_ticks > 0:
+            hp_bar += "█"
+            bar_ticks -= 1
+
+        while len(hp_bar) < 50:
+            hp_bar += " "
+
+        hp_string = str(self.hp) + "/" + str(self.maxHP)
+        current_hp = ""
+
+        if len(hp_string) > 0:
+            decreased = 9 - len(hp_string)
+
+            while decreased > 0:
+                current_hp += " "
+                decreased -= 1
+            current_hp += hp_string
+        else:
+            current_hp = hp_string
+
+        print("                      __________________________________________________")
+        print(Bcolors.BOLD + self.name + "     " +
+              current_hp + " |" + Bcolors.FAIL + hp_bar + Bcolors.ENDC + "|")

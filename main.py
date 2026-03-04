@@ -1,6 +1,7 @@
 from classes.game import Person, Bcolors
 from classes.magic import Spell
 from classes.inventory import Item
+import random
 
 
 # Create magic
@@ -41,13 +42,15 @@ i = 0
 print(Bcolors.FAIL + Bcolors.BOLD + "AN ENEMY ATTACK!" + Bcolors.ENDC)
 
 while running:
-    print("============================")
+    print("========================================================================")
 
-    print("\n\n")
-    print("NAME                    HP                                      MP")
-    for player in players:
-        player.get_status()
     print("\n")
+    print("NAME                 HP                                      MP")
+    for player in players:
+        player.get_player_status()
+    print("\n")
+
+    enemy.get_enemy_status()
 
     for player in players:
         player.choose_action()
@@ -101,8 +104,13 @@ while running:
                 player.heal(item.prop)
                 print(Bcolors.OKGREEN + "\n" + item.name + " heals for", str(item.prop), "HP" + Bcolors.ENDC)
             elif item.type == "elixir":
-                player.hp = player.maxHP
-                player.mp = player.maxMP
+                if item.name == "MegaElixir":
+                    for i in players:
+                        i.hp = i.maxHP
+                        i.mp = i.maxMP
+                else:
+                    player.hp = player.maxHP
+                    player.mp = player.maxMP
                 print(Bcolors.OKGREEN + "\n" + item.name + " fully restores HP/MP" + Bcolors.ENDC)
             elif item.type == "attack":
                 enemy.take_damage(item.prop)
@@ -110,11 +118,11 @@ while running:
 
  # Enemy counter-attack
     enemy_choice = 1
+    target = random.randint(0, 2)
     enemy_dmg = enemy.generate_damage()
-    player1.take_damage(enemy_dmg)
+
+    players[target].take_damage(enemy_dmg) # land an enemy attack on random target
     print("Enemy attacks for", enemy_dmg, " points of damage." )
-    print("______________________________________")
-    print("Enemy HP:", Bcolors.FAIL + str(enemy.get_hp()) + "/" + str(enemy.get_max_hp()) + Bcolors.ENDC + "\n")
 
 # Determine when the battle is over
     if enemy.get_hp() == 0:
