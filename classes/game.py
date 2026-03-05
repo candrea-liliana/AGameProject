@@ -59,7 +59,7 @@ class Person:
     def reduce_mp(self, cost):
         self.mp -= cost
 
-# Action classes to choose for person
+# Action functions
     def choose_action(self):
         i = 1
 
@@ -85,6 +85,20 @@ class Person:
             print("        " + str(i) + ".", item["item"].name + ":", item["item"].description, " (x" + str(item["quantity"]) + ")")
             i += 1
 
+    def choose_target(self, enemies):
+        i = 1
+
+        print("\n" + Bcolors.FAIL + Bcolors.BOLD + "    TARGET" + Bcolors.ENDC)
+        for enemy in enemies:
+            if enemy.get_hp() != 0:
+                print("        " + str(i) + ".", enemy.name)
+                i += 1
+
+        # returns the index
+        choice = int(input("    Choose a target: ")) - 1
+        return choice
+
+# Progress bar info
     def get_player_status(self):
         # Calculate HP/MP progress bars
         hp_bar = ""
