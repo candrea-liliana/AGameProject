@@ -29,14 +29,16 @@ player_items = [{"item": potion, "quantity": 15},
                 {"item": megaElixir, "quantity": 2},
                 {"item": grenade, "quantity": 5}]
 
-# Instantiate Players
-player1 = Person("Lilu:",3260, 135, 300, 34, player_spells, player_items)
-player2 = Person("Luci:",4160, 188, 311, 34, player_spells, player_items)
-player3 = Person("NGSW:",2460, 200, 200, 34, player_spells, player_items)
+enemy_spells = [fire, blizzard, meteor, cure]
 
-enemy1 = Person("Magu", 13200, 725, 545, 25, [], [])
-enemy2 = Person("Lego  ", 1200, 135, 560, 325, [], [])
-enemy3 = Person("Stor  ", 1200, 135, 560, 325, [], [])
+# Instantiate Players
+player1 = Person("Lilu",3260, 135, 300, 34, player_spells, player_items)
+player2 = Person("Luci",4160, 188, 311, 34, player_spells, player_items)
+player3 = Person("NGSW",2460, 200, 200, 34, player_spells, player_items)
+
+enemy1 = Person("Magu", 13200, 725, 545, 25, enemy_spells, [])
+enemy2 = Person("Lego  ", 1200, 135, 560, 325, enemy_spells, [])
+enemy3 = Person("Stor  ", 1200, 135, 560, 325, enemy_spells, [])
 
 players = [player1, player2, player3]
 enemies = [enemy2, enemy1, enemy3]
@@ -133,21 +135,14 @@ while running:
                 enemy = player.choose_target(enemies)
 
                 enemies[enemy].take_damage(item.prop)
-                print(Bcolors.FAIL + "\n" + item.name + " deals", str(item.prop), "points of damage to "+ enemies[enemy].name.replace("  ", "") + Bcolors.ENDC)
+                print(Bcolors.FAIL + "\n" + item.name + " deals", str(item.prop), " points of damage to "+ enemies[enemy].name.replace("  ", "") + Bcolors.ENDC)
 
                 if enemies[enemy].get_hp() == 0: # Delete dead enemy from the list killed by an item attack
                     print(Bcolors.BOLD + enemies[enemy].name.replace("  ", "") + " has died." + Bcolors.ENDC)
                     del enemies[enemy]
+    print("\n")
 
- # Enemy counter-attack
-    enemy_choice = 1
-    target = random.randint(0, 2)
-    enemy_dmg = enemies[0].generate_damage()
-
-    players[target].take_damage(enemy_dmg) # land an enemy attack on random target
-    print("Enemy attacks for", enemy_dmg, " points of damage." )
-
-# Determine when the battle is over
+    # Check if the battle is over
     defeated_players = 0
     defeated_enemies = 0
 
@@ -159,9 +154,41 @@ while running:
         if enemies[0].get_hp() == 0:
             defeated_enemies += 1
 
+    # Check if the Player won
     if defeated_enemies == 2:
         print(Bcolors.OKGREEN + "You Win!" + Bcolors.ENDC)
         running = False
+
+    # Check if the Enemy won
     elif defeated_players == 2:
         print(Bcolors.FAIL + "Your enemies have defeated you!" + Bcolors.ENDC)
         running = False
+
+    # Enemy attack phase
+    for enemy in enemies:
+        enemy_choice = random.randrange(0, 2)
+
+        if enemy_choice == 0:
+            # Chose attack
+            target = random.randint(0, 2)
+            enemy_dmg = enemy.generate_damage()
+
+            players[target].take_damage(enemy_dmg)
+            print(enemy.name.replace("  ", "") + " attacks " + players[target].name.replace("  ", "") + " for", enemy_dmg, " points of damage.")
+
+        elif enemy_choice == 1:
+            spell, magic_dmg = enemy.choose_enemy_spell()
+            enemy.reduce_mp(spell.cost)
+
+            if spell.type == "whiteMagic":
+                enemy.heal(magic_dmg)
+                print(Bcolors.OKBLUE + "\n" + spell.name + " heals " + enemy.name + " for", str(magic_dmg), " HP" + Bcolors.ENDC)
+            elif spell.type == "blackMagic":
+                target = random.randint(0, 2)
+
+                players[target].take_damage(magic_dmg)
+                print(Bcolors.OKBLUE + enemy.name.replace("  ", "") + "'s " + spell.name + " deals", str(magic_dmg), " points of damage to " + players[target].name.replace("  ", "") + Bcolors.ENDC)
+
+                if players[target].get_hp() == 0:
+                    print(Bcolors.BOLD + players[target].name.replace("  ", "") + " has died." + Bcolors.ENDC)
+                    del players[target]
